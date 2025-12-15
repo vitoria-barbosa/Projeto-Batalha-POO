@@ -13,7 +13,10 @@ public class PersonagensUtils {
         return  "1 - ARQUEIRO : Tem 50% de chance de atacar usando o ataque múltiplo (dano = ataque X ataque múltiplo)\n" +
                 "2 - GUERREIRO: Possui defesa que diminui o dano recebido\n" +
                 "3 - MAGO     : Ignora a defesa dos guerreiros e dá o dobro de dano nos arqueiros\n" +
-                "4 - MONGE    : Tem 25% de chance de esquivar o ataque do adversário";
+                "4 - MONGE    : Tem 25% de chance de esquivar o ataque do adversário\n" +
+                "5 - EXAUSTO  : A cada ataque, seu ataque cai pela metade\n" +
+                "6 - SACERDOTE: O ataque cura o alvo com 50% do dano\n" +
+                "7 - LETALIS  : Ataque fatal que zera a vida do oponente";
     }
 
     public static int escolhaDoPersonagem(){
@@ -46,6 +49,12 @@ public class PersonagensUtils {
                     return new Mago(nome,ataque);
                 case 4:
                     return new Monge(nome,ataque);
+                case 5:
+                    return new Exausto(nome, ataque);
+                case 6:
+                    return new Sacerdote(nome, ataque);
+                case 7:
+                    return new Letalis(nome, ataque);
                 default:
                     throw new ValidacaoPersonagemInvalido("Erro: Personagem inválido");
             }
